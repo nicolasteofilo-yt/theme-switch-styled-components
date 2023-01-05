@@ -4,7 +4,7 @@ import { RiBuildingLine } from "react-icons/ri";
 
 import { ButtonToProfile, Container, Infos, Picture } from "./styles";
 
-const GitHubProfileCard = ({ username }) => {
+const GitHubProfileCard = ({ username, onChangeTheme, theme }) => {
   const [user, setUser] = useState({});
 
   useEffect(() => {
@@ -13,10 +13,9 @@ const GitHubProfileCard = ({ username }) => {
       .then((data) => setUser(data));
   }, []);
 
-  console.log(user);
-
   return (
     <Container>
+      <button className="change-theme-btn" onClick={onChangeTheme}>{theme === 'dark' ? '🌞' : '🌑'}</button>
       <Picture src={user.avatar_url} atl={user.login} title={user.login} />
       <Infos>
         <h3>{user.name ? user.name : "Nome não disponível"}</h3>

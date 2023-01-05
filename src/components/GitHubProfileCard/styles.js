@@ -10,6 +10,13 @@ export const Container = styled.div`
   flex-direction: column;
   backdrop-filter: blur(5px);
   transform-style: preserve-3d;
+
+  .change-theme-btn {
+    margin-top: 8px;
+    border: none;
+    background: transparent;
+    font-size: 30px;
+  }
 `;
 
 export const Picture = styled.img`
@@ -33,8 +40,8 @@ export const Infos = styled.div`
   }
 
   svg {
-    color: #fff;
-    fill: #fff;
+    color: ${({ theme }) => theme.colors.textColor};
+    fill: ${({ theme }) => theme.colors.textColor};
   }
 
   .details {

@@ -17,8 +17,8 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     margin: 0 auto;
-    background-color: #0D1117;
-    color: #E1E1E1;
+    background-color: ${({ theme }) => theme.colors.background};
+    color: ${({ theme }) => theme.colors.textColor};
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
 
